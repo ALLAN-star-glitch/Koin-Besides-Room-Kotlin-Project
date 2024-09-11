@@ -43,6 +43,7 @@ dependencies {
 
     val koin_version = "4.0.0-RC2"
     val lifecycle_version = "2.8.5"
+    val room_version = "2.6.1"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -75,6 +76,19 @@ dependencies {
 
     // Annotation processor
     kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+
+    //room
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+
+    // To use Kotlin annotation processing tool (kapt) for room
+    kapt ("androidx.room:room-compiler:$room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
 
 
 
