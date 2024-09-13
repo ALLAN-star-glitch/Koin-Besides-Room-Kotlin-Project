@@ -15,7 +15,7 @@ class DatabaseViewModel(private val repository: DatabaseRepository) : ViewModel(
             get() = _noteList
 
     fun getAllNotes() = viewModelScope.launch {
-        repository.getAllNotes().collect{notes->
+        repository.getAllNotes().collect{notes-> //we use collect because we are using flow in the repository
             _noteList.postValue(notes)
         }
     }

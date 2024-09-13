@@ -7,11 +7,11 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val databaseModule = module {
-    single{provideDatabase(androidContext()) }
+    single{provideDatabase(androidContext()) } //database
 
-    single {providerDao(get())}
+    single {providerDao(get())} //dao
 
-    factory { DatabaseRepository(get()) } //factory creates a new instance every time it's requested
+    factory { DatabaseRepository(get()) } //repository ... factory creates a new instance every time it's requested
 
-    viewModel { DatabaseViewModel(get()) }
+    viewModel { DatabaseViewModel(get()) }//viewmodel
 }
